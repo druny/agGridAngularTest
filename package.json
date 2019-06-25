@@ -6,7 +6,7 @@
     "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
-    "lint": "ng lint",
+    "lint": "lint-staged",
     "e2e": "ng e2e"
   },
   "private": true,
@@ -21,6 +21,7 @@
     "@angular/router": "~8.0.1",
     "ag-grid-angular": "^21.0.1",
     "ag-grid-community": "^21.0.1",
+    "ag-grid-enterprise": "^21.0.1",
     "rxjs": "~6.4.0",
     "tslib": "^1.9.0",
     "zone.js": "~0.9.1"
@@ -51,7 +52,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged && ng test --watch=false"
+      "pre-commit": "lint-staged"
     }
   },
   "lint-staged": {
