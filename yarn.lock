@@ -622,6 +622,11 @@ ag-grid-community@^21.0.1:
   resolved "https://registry.yarnpkg.com/ag-grid-community/-/ag-grid-community-21.0.1.tgz#8cf6096de7e9ae6144bf5aced89b03814ea7b034"
   integrity sha512-wqm6W39kImPonjRxHvnt/L6roJLxPXSopXF4pvcE1paxN7S25HNsBgTOB1uaLlQ4/xt3xSpccPbTDqVUnSxrmQ==
 
+ag-grid-enterprise@^21.0.1:
+  version "21.0.1"
+  resolved "https://registry.yarnpkg.com/ag-grid-enterprise/-/ag-grid-enterprise-21.0.1.tgz#a84796a25c9754c2535c9ea47d3146e57e0b2960"
+  integrity sha512-C1R6bk+zltxMlZSddzaS5Go7ZfEieYTngfxbxJxldehvUFXxY3rRM3PA9NJyNVDQmks6T3Zm7jxkdw9RNUxItA==
+
 agent-base@4, agent-base@^4.1.0:
   version "4.3.0"
   resolved "https://registry.yarnpkg.com/agent-base/-/agent-base-4.3.0.tgz#8165f01c436009bccad0b1d122f05ed770efc6ee"
