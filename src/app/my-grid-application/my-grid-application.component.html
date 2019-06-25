@@ -1,0 +1,17 @@
+<div style="width: 100%;">
+  <label>
+    <p>Toggle Select mode</p>
+    <input name="switcher" type="checkbox" [(ngModel)]="isSelectable" [checked]="isSelectable" (change)="toggleSelectMode()">
+  </label>
+  <ag-grid-angular
+    #agGrid
+    style="width: 100%; height: 300px;"
+    class="ag-theme-material"
+    rowSelection="multiple"
+    suppressRowClickSelection="true"
+    [gridOptions]="gridOptions"
+    [getContextMenuItems]="getContextMenuItems"
+    (selectionChanged)="onCellValueChanged($event)"
+  >
+  </ag-grid-angular>
+</div>
