@@ -17,7 +17,7 @@ import { TaskService } from '../repository/task/task.service';
   styleUrls: ['./my-grid-application.component.scss'],
 })
 export class MyGridApplicationComponent implements OnInit {
-  private gridOptions: GridOptions;
+  public gridOptions: GridOptions;
   @Input() public isSelectable = false;
 
   constructor(public taskService: TaskService) {

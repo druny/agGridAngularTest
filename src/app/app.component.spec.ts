@@ -1,31 +1,40 @@
 import { TestBed, async } from '@angular/core/testing';
+import { FormsModule } from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
 import { RouterTestingModule } from '@angular/router/testing';
+import { AgGridModule } from 'ag-grid-angular';
+
 import { AppComponent } from './app.component';
+import { LinkComponent } from './link/link.component';
+import { MyGridApplicationComponent } from './my-grid-application/my-grid-application.component';
+import { HeaderCheckboxComponent } from './header-checkbox/header-checkbox.component';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [RouterTestingModule],
-      declarations: [AppComponent],
+      imports: [
+        FormsModule,
+        BrowserModule,
+        RouterTestingModule,
+        AgGridModule.withComponents([
+          LinkComponent,
+          HeaderCheckboxComponent,
+          MyGridApplicationComponent,
+        ]),
+      ],
+      declarations: [
+        AppComponent,
+        LinkComponent,
+        HeaderCheckboxComponent,
+        MyGridApplicationComponent,
+      ],
     }).compileComponents();
   }));
 
   it('should create the app', () => {
     const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.debugElement.componentInstance;
+    const app = fixture.componentInstance;
+
     expect(app).toBeTruthy();
-  });
-
-  it(`should have as title 'agGridAngularTest'`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('agGridAngularTest');
-  });
-
-  it('should render title in a h1 tag', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('Welcome to agGridAngularTest!');
   });
 });

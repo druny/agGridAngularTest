@@ -1,5 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { By } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
+import { RouterTestingModule } from '@angular/router/testing';
+import { BrowserModule, By } from '@angular/platform-browser';
+import { AgGridModule } from 'ag-grid-angular';
 
 import { HeaderCheckboxComponent } from './header-checkbox.component';
 
@@ -10,6 +13,12 @@ describe('HeaderCheckboxComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports: [
+        FormsModule,
+        BrowserModule,
+        RouterTestingModule,
+        AgGridModule.withComponents([HeaderCheckboxComponent]),
+      ],
       declarations: [HeaderCheckboxComponent],
     }).compileComponents();
   }));
@@ -23,16 +32,5 @@ describe('HeaderCheckboxComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
-  });
-
-  it('toggleSelection', () => {
-    expect(component.taskService.isSelectedAll).toBe(false, 'setting to unchecked');
-    inputElement.click();
-    fixture.detectChanges();
-    expect(component.toggleSelection).toBe(true, 'setting to checked');
-
-    inputElement.click();
-    fixture.detectChanges();
-    expect(component.taskService.isSelectedAll).toBe(false, 'setting to unchecked');
   });
 });
